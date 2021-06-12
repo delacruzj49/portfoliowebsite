@@ -3,7 +3,9 @@ import React from 'react';
 class HomeProjects extends React.Component{
     render(){
         return(
-            <h1>Home</h1>
+            <React.Fragment>
+                <h1>Hello World</h1>
+            </React.Fragment>
         );
     }
 }
