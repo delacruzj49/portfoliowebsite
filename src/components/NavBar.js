@@ -1,4 +1,6 @@
 import React from 'react';
+import Styled from 'styled-components';
+import Theme from '../theme/theme';
 
 //import bootstrap components
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,9 +11,9 @@ class NavigationBar extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <Navbar expand="lg">
+                <Navigation expand="lg">
                     <Navbar.Brand href="#home">Personal-Page</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
@@ -19,10 +21,21 @@ class NavigationBar extends React.Component{
                         <Nav.Link href="#link">Contact</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
-                </Navbar>
+                </Navigation>
             </React.Fragment>
         );
     }
 }
 
 export default NavigationBar;
+
+
+
+const Navigation = Styled(Navbar)`
+background-color:none;
+color:${Theme.colorText}
+`
+
+const Toggle = Styled(Navbar.Toggle)`
+border:none;
+`
