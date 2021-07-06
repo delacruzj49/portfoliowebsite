@@ -6,6 +6,7 @@ import Navbar from '../components/NavBar.js';
 //import bootstrap
 import Jumbotron from 'react-bootstrap/Jumbotron';
 
+import Image from '../assets/hero.png';
 
 
 class HomeProjects extends React.Component{
@@ -14,8 +15,10 @@ class HomeProjects extends React.Component{
             <React.Fragment>
                 <Navbar/>
                 <Page>
-                    <Hero fluid>  </Hero>
-                    
+                    <Hero fluid> 
+                        <Header>Web Developer</Header>
+                    </Hero>
+                   
                 </Page>
             </React.Fragment>
         );
@@ -31,9 +34,17 @@ margin: auto;
 width: auto;
 height: 2000px;
 background-color: ${Theme.colorGray};
-text-align:center;
 `
 const Hero = Styled(Jumbotron)`
-background-color:${Theme.colorwhite};
-background-image: -webkit-linear-gradient(30deg, ${Theme.colorPrimary} 50%, ${Theme.colorAccent} 50%);
+background-image: url(${Image});
+background-size:cover;
+height:auto;
+`
+const Header = Styled.div`
+color:${Theme.colorPrimary};
+font-size:${Theme.lengthLg1};
+background-color:${Theme.colorWhite};
+margin:0 25%;
+padding:2% 2%;
+text-align:center;
 `
