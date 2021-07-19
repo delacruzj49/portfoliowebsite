@@ -9,7 +9,7 @@ class HomeProjects extends React.Component{
             <React.Fragment>
                 
                 <Page>
-                <NavBar/> 
+                    <NavBar/> 
                 </Page>
                 
             </React.Fragment>
@@ -25,5 +25,4 @@ margin:auto;
 width:auto;
 height:2000px;
 background-color:${Theme.colorPrimary};
-
 `
