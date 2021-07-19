@@ -23,6 +23,6 @@ export default HomeProjects;
 const Page = Styled.div `
 margin:auto;
 width:auto;
-height:2000px;
+height:1000px;
 background-color:${Theme.colorPrimary};
 `
