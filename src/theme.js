@@ -1,7 +1,7 @@
 
 const Theme =  {
-    colorPrimary:"#9AC6C5",
-    colorAccent:"#7785AC",
+    colorPrimary:"#1E6091",
+    colorAccent:"#1A759F",
     colorWhite:"white",
     colorText:"#565360",
     colorLabel:"#908E9B",
