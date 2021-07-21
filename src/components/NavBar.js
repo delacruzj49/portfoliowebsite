@@ -53,6 +53,8 @@ width:auto;
 height: 200px;
 border-radius:50%;
 margin-left:25%;
+border-style:solid;
+border-color:${Theme.colorPrimary};
 `
 const Name = Styled.h1`
 font-size:${Theme.lengthLg1};
