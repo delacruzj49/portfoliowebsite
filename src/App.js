@@ -3,7 +3,7 @@ import{
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    NavLink
 } from 'react-router-dom';
 
 import Styled from 'styled-components';
@@ -59,23 +59,20 @@ function App() {
           <Name>Juan De La Cruz</Name>
           <JobTile>Front End Developer</JobTile>
         </NavbarBrand>
-        
-       
-        <NavLink to="/" >
+    
+        <NavLinks to="/">
             <HomeIcon/>
             Home
-        </NavLink>  
-        <NavLink to="/about">
+        </NavLinks>  
+        <NavLinks to="/about">
           <AboutIcon/>
           About
-        </NavLink>
-        <NavLink to="/projects">
+        </NavLinks>
+        <NavLinks to="/projects">
           <ProjectIcon/>
           Projects
-        </NavLink>
+        </NavLinks>
         
-          
-  
       </MainNav>
 
       <ComponentWindow style={{ flex: 1, padding: "10px" }}>
@@ -138,13 +135,16 @@ font-size:${Theme.lengthMd1};
 
 `
 
-const NavLink = Styled(Link)`
+const NavLinks = Styled(NavLink)`
 width:auto;
 color:${Theme.colorWhite};
 padding:0 0 0 10%;
 font-size:${Theme.lengthMd2};
 &:hover{
   text-decoration:none;
+  color:${Theme.colorWhite};
+}
+&:focus{
   color:${Theme.colorWhite};
   background-color:${Theme.colorPrimary};
   border-right:${Theme.colorWhite};
