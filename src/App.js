@@ -158,7 +158,7 @@ font-size:${Theme.lengthMd2};
 const ComponentWindow = Styled.div`
 margin:10vh 10vh 0 0; 
 height:80vh;
-background:${Theme.colorWhite};
+background:${Theme.colorAccent};
 width:60%;
 `
 
