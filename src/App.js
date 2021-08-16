@@ -13,7 +13,7 @@ import Projects from './pages/projects.js';
 import About from './pages/about.js';
 import NotFound from './pages/404.js';
 
-// importing main theme
+// importing main theme and assets
 import Theme from './theme.js'
 import Picture from './assets/self.JPG';
 
@@ -26,6 +26,8 @@ import {MdWork} from 'react-icons/md';
 import Nav from "react-bootstrap/Nav";
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
+//react-router-dom routes for pages
 const routes = [
   {
   path:'/',
@@ -52,6 +54,19 @@ function App() {
   return (
     <Router>
     <MainWindow>
+      <MobileNav collapseOnSelect fixed="top" expand="">
+          <Container fluid>
+            <Navbar.Brand href="/">Juan De La Cruz</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Navalt className="me-auto" fluid>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/about">About</Nav.Link>
+                <Nav.Link  href='/projects'>Projects</Nav.Link>
+              </Navalt>
+            </Navbar.Collapse>
+        </Container>
+    </MobileNav>
       <MainNav className='flex-column'>
         <NavbarBrand>
           <NavImage src={Picture}/>
@@ -59,7 +74,6 @@ function App() {
           <Name>Juan De La Cruz</Name>
           <JobTile>Front End Developer</JobTile>
         </NavbarBrand>
-    
         <NavLinks to="/">
             <HomeIcon/>
             Home
@@ -72,9 +86,7 @@ function App() {
           <ProjectIcon/>
           Projects
         </NavLinks>
-        
       </MainNav>
-
       <ComponentWindow style={{ flex: 1, padding: "10px" }}>
         <Switch>
           {routes.map((route, index) => (
@@ -110,6 +122,11 @@ width:20%;
 position:left;
 height:80vh;
 margin:10vh 0 0 10vh;
+
+@media screen and (min-width: 280px) and (max-width: 425px) { 
+  display:none;
+}
+
 `
 
 const NavbarBrand = Styled(Navbar.Brand)`
@@ -160,6 +177,11 @@ margin:10vh 10vh 0 0;
 height:80vh;
 background:${Theme.colorAccent};
 width:60%;
+
+@media screen and (min-width: 280px) and (max-width: 425px) { 
+  margin:10vh 0 0 0;
+}
+
 `
 
 //styled icons
@@ -179,4 +201,23 @@ color:${Theme.colorWhite};
 padding: 0 2% 1% 0 ;
 margin:5%;
 
+`
+
+//Navigation for mobile screens
+
+const MobileNav = Styled(Navbar)`
+@media screen and (min-width: 280px) and (max-width: 425px) { 
+  content:display;
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 2560px) { 
+  display:none;
+}
+
+
+`
+
+const Navalt =Styled(Nav)`
+background:${Theme.colorWhite};
 `
