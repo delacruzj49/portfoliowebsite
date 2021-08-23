@@ -35,11 +35,27 @@ const Welcome = Styled.h1`
 margin-top:25vh;
 color: ${Theme.colorWhite};
 font-size:${Theme.lengthLg3};
+
+@media screen and (min-width: 280px) and (max-width: 540px) { 
+    font-size:${Theme.lengthLg2};
+  }
+
+  @media screen and (min-width: 2560px){
+      font-size:${Theme.lengthXL1};
+  }
 `
 
 const About = Styled.h2`
 color: ${Theme.colorWhite};
 font-size:${Theme.lengthMd3};
+
+@media screen and (min-width: 280px) and (max-width: 540px) { 
+    font-size:${Theme.lengthMd1};
+  }
+@media screen and (min-width: 2560px){
+    font-size:${Theme.lengthLg1};
+}
+
 `
 const Resume= Styled.a`
 border:none;
@@ -48,5 +64,11 @@ font-size:${Theme.lengthMd2};
 color:${Theme.colorAccent};
 &:hover{
     color:${Theme.colorWhite};
+}
+@media screen and (min-width: 280px) and (max-width: 540px) { 
+    font-size:${Theme.lengthMd1};
+  }
+@media screen and (min-width: 2560px){
+    font-size:${Theme.lengthMd3};
 }
 `
