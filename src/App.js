@@ -55,11 +55,11 @@ function App() {
     <Router>
     <MainWindow>
       <MobileNav collapseOnSelect fixed="top" expand="">
-          <Container fluid>
+          <Container >
             <Navbar.Brand href="/">Juan De La Cruz</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Navalt className="me-auto" fluid>
+              <Navalt className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About</Nav.Link>
                 <Nav.Link  href='/projects'>Projects</Nav.Link>
@@ -123,9 +123,10 @@ position:left;
 height:80vh;
 margin:10vh 0 0 10vh;
 
-@media screen and (min-width: 280px) and (max-width: 425px) { 
+@media screen and (min-width: 280px) and (max-width: 540px) { 
   display:none;
 }
+
 
 `
 
@@ -168,6 +169,10 @@ font-size:${Theme.lengthMd2};
   border-right: 5px solid ${Theme.colorwhite};
 }
 
+@media screen and (min-width: 2560px){
+  font-size:${Theme.lengthLg1};
+}
+
 `
 
 //Styling Component for window displaying components
@@ -178,7 +183,7 @@ height:80vh;
 background:${Theme.colorAccent};
 width:60%;
 
-@media screen and (min-width: 280px) and (max-width: 425px) { 
+@media screen and (min-width: 280px) and (max-width: 540px) { 
   margin:10vh 0 0 0;
 }
 
@@ -204,7 +209,6 @@ margin:5%;
 `
 
 //Navigation for mobile screens
-
 const MobileNav = Styled(Navbar)`
 @media screen and (min-width: 280px) and (max-width: 425px) { 
   content:display;
@@ -215,9 +219,14 @@ const MobileNav = Styled(Navbar)`
   display:none;
 }
 
+@media screen and (min-width: 2560px){
+display:none;
+}
+
 
 `
 
+///mobile nav stiyling
 const Navalt =Styled(Nav)`
 background:${Theme.colorWhite};
 `
