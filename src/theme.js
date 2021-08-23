@@ -13,7 +13,8 @@ const Theme =  {
     lengthMd3:"1.5rem",
     lengthLg1:"2rem",
     lengthLg2:"3rem",
-    lengthLg3:"4rem"
+    lengthLg3:"4rem",
+    lengthXL1:"10rem"
 };
 
 export default Theme;
