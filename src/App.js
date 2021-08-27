@@ -55,17 +55,23 @@ function App() {
     <Router>
     <MainWindow>
       <MobileNav collapseOnSelect fixed="top" expand="">
-          <Container >
-            <Navbar.Brand href="/">Juan De La Cruz</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Navalt className="me-auto">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/about">About</Nav.Link>
-                <Nav.Link  href='/projects'>Projects</Nav.Link>
-              </Navalt>
-            </Navbar.Collapse>
-        </Container>
+        <MobileContainer>
+        <MobileNavbarBrand>
+          <MobileNavImage src={Picture}/>
+          <BrandName>
+            <MobileName>Juan De La Cruz</MobileName>
+            <MobileTitle>Web Developer</MobileTitle>
+          </BrandName>
+        </MobileNavbarBrand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Navalt className="me-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/projects">Portfolio</Nav.Link>
+            </Navalt>
+          </Navbar.Collapse>
+        </MobileContainer>
     </MobileNav>
       <MainNav className='flex-column'>
         <NavbarBrand>
@@ -210,6 +216,8 @@ margin:5%;
 
 //Navigation for mobile screens
 const MobileNav = Styled(Navbar)`
+background-color:${Theme.colorAccent};
+padding:0;
 @media screen and (min-width: 280px) and (max-width: 425px) { 
   content:display;
 
@@ -229,4 +237,37 @@ display:none;
 ///mobile nav stiyling
 const Navalt =Styled(Nav)`
 background:${Theme.colorWhite};
+`
+const MobileContainer = Styled(Container)`
+padding:0;
+margin:0;
+`
+
+const MobileNavImage = Styled(Image)`
+width:auto;
+height:7vh;
+border-radius:50%;
+border-style:solid;
+border-color:${Theme.colorPrimary};
+`
+
+
+
+//Mobile Brand Name / Title / Image
+const BrandName = Styled.div`
+margin-top:10%;
+color:${Theme.colorWhite};
+margin-left:1vh;
+text-align:left;
+`
+
+const MobileName = Styled.h1`
+font-size:${Theme.lengthMd3};
+`
+const MobileTitle = Styled.h2`
+font-size:${Theme.lengthMd1};
+`
+const MobileNavbarBrand = Styled(NavbarBrand)`
+display:flex;
+margin:0;
 `
